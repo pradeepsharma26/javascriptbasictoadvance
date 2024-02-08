@@ -6,11 +6,27 @@
     <title>Async</title>
 </head>
 <body>
-    <h1>ram ji Ayodhya wale</h1>
-    <button id="start">Stop</button>
+    <h1 id="ram">ram ji Ayodhya wale</h1>
+    <button id="start">Start</button>
     <button id="stop">Stop</button>
-</body>
-<script>
 
-</script>
+    <script>
+        let intervalId;
+        
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        const ramElement = document.getElementById("ram");
+
+        startButton.addEventListener("click", function() {
+            intervalId = setInterval(function() {
+                // Print the text inside the setInterval
+                console.log(ramElement.textContent);
+            }, 1000);
+        });
+
+        stopButton.addEventListener("click", function() {
+            clearInterval(intervalId);
+        });
+    </script>
+</body>
 </html>
