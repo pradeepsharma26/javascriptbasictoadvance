@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>ram ji Ayodhya wale</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+     const changeinnerHtml=function(){
+        document.querySelector("h1").innerHTML="lanka chalo "
+    }
+    const changeMe=setTimeout(changeinnerHtml,3000)
+        
+    document.querySelector("#stop").addEventListener('click',function(e){
+        clearTimeout(changeMe)
+        console.log("stopeed");
+    })
+
+</script>
+</html>
